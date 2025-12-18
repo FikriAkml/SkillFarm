@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pembayaran - Skill Farm</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+    }
+
+    body {
+        background: #0b0f19;
+        color: #fff;
+        padding-bottom: 50px;
+    }
+
+    .navbar {
+        width: 100%;
+        background: #111625;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        border-bottom: 1px solid #222b45;
+    }
+
+    .navbar .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: #0dd38d;
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 18px;
+        font-size: 15px;
+    }
+
+    .container {
+        max-width: 480px;
+        margin: 40px auto;
+        background: #111625;
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid #222b45;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .payment-box {
+        background: #0f1422;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #1c253e;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    .btn-pay {
+        width: 100%;
+        padding: 12px;
+        background: #4f7fff;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: 0.3s;
+    }
+
+    .btn-pay:hover {
+        background: #6d94ff;
+    }
+
+    /* POPUP */
+    .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.65);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 200;
+        animation: fadeIn 0.3s ease forwards;
+    }
+
+    .popup-content {
+        background: #111625;
+        padding: 30px 25px;
+        width: 90%;
+        max-width: 380px;
+        text-align: center;
+        border-radius: 16px;
+        border: 1px solid #1c253e;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        transform: translateY(-50px);
+        opacity: 0;
+        animation: slideDown 0.3s forwards;
+    }
+
+    .va-number {
+        background: #0f1422;
+        padding: 12px;
+        border-radius: 10px;
+        margin: 20px 0;
+        font-size: 18px;
+        letter-spacing: 2px;
+        border: 1px solid #1c253e;
+        font-weight: bold;
+    }
+
+    .timer-box {
+        background: #0dd38d22;
+        padding: 12px 0;
+        border-radius: 10px;
+        margin: 15px 0;
+    }
+
+    .timer {
+        font-size: 22px;
+        font-weight: bold;
+        color: #0dd38d;
+        letter-spacing: 1px;
+    }
+
+    .popup-btn {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+        margin: 5px;
+        transition: 0.3s;
+    }
+
+    .popup-btn.ok { background:#4f7fff; }
+    .popup-btn.ok:hover { background:#6d94ff; }
+    .popup-btn.dashboard { background:#0dd38d; }
+    .popup-btn.dashboard:hover { background:#2df1a3; }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">Skill Farm</div>
+    <div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="jasa-saya.html">Jasa Saya</a>
+        <a href="permintaan.html">Permintaan</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Pembayaran Jasa</h2>
+    <div class="payment-box">
+        <div>Nama Jasa:</div>
+        <strong>Jasa Coding Website</strong><br><br>
+        <div>Total yang harus dibayar:</div>
+        <strong>Rp 1.500.000</strong>
+    </div>
+
+    <button class="btn-pay" onclick="showPopup()">Konfirmasi Pembayaran</button>
+</div>
+
+<!-- POPUP MODERN -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <h2>Tagihan Pembayaran</h2>
+        <p>Silakan transfer ke Virtual Account berikut:</p>
+        <div class="va-number" id="vaNumber">1234 5678 9123 4444</div>
+        <div class="timer-box">
+            <span class="timer" id="timer">24:00:00</span>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 10px;">
+            <button class="popup-btn ok" onclick="closePopup()">OK</button>
+            <button class="popup-btn dashboard" onclick="window.location.href='dashboard.html'">Kembali ke Dashboard</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function showPopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'flex';
+    startTimer(24*60*60); // 24 jam
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
+
+// Timer mundur
+function startTimer(duration) {
+    let timer = duration;
+    const timerEl = document.getElementById('timer');
+    clearInterval(window.timerInterval);
+    window.timerInterval = setInterval(() => {
+        let hours = Math.floor(timer / 3600);
+        let minutes = Math.floor((timer % 3600) / 60);
+        let seconds = timer % 60;
+
+        hours = hours < 10 ? '0'+hours : hours;
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        seconds = seconds < 10 ? '0'+seconds : seconds;
+
+        timerEl.textContent = hours + ':' + minutes + ':' + seconds;
+
+        if (--timer < 0) {
+            clearInterval(window.timerInterval);
+            timerEl.textContent = "Waktu Habis!";
+        }
+    }, 1000);
+}
+</script>
+
+</body>
+</html>

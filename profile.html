@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Skill Farm</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #0b2239;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 240px;
+            background: #112b45;
+            padding: 30px 20px;
+            border-right: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .sidebar h2 {
+            color: #0dd38d;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .menu-item {
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .menu-item:hover,
+        .active {
+            background: #153455;
+        }
+
+        /* PROFILE AREA */
+        .profile-container {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #1b3a57;
+        border: 3px solid #ffffff;   /* INI BORDER LINGKAR */
+        cursor: pointer;
+        }
+
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .label {
+            margin-top: 30px;
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        .profile-box {
+            margin-top: 10px;
+            padding: 20px;
+            background: #112b45;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .profile-row {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>Skill Farm</h2>
+
+        <div class="menu-item" onclick="window.location.href='dashboard.html'">🏠 Dashboard</div>
+        <div class="menu-item active">👤 Profil</div>
+        <div class="menu-item">⚙️ Pengaturan</div>
+        <div class="menu-item">❓ Bantuan</div>
+        <div class="menu-item">🚪 Logout</div>
+    </aside>
+
+    <!-- PROFILE CONTENT -->
+    <div class="profile-container">
+
+        <div class="profile-header">
+            <div class="profile-img">
+                <img src="images/Madara2.jpg" id="profilePhoto" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div>
+                <div class="profile-name">Nama Pengguna</div>
+                <div>Member sejak 2024</div>
+            </div>
+        </div>
+
+        <div class="label">Informasi Pribadi</div>
+
+        <div class="profile-box">
+            <div class="profile-row"><b>Nama Lengkap:</b> Madara Uchiha</div>
+            <div class="profile-row"><b>Email       :</b> MadaraPDS4@email.com</div>
+            <div class="profile-row"><b>No HP       :</b> 0812-3456-7890</div>
+            <div class="profile-row"><b>Kota        :</b> Konoha</div>
+            <div class="profile-row"><b>Skill Utama :</b> Mugen Tsukoyomi</div>
+        </div>
+
+    </div>
+
+</body>
+</html>

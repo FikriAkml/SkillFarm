@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status Permintaan - Skill Farm</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        background: #0b2239;
+        color: white;
+        min-height: 100vh;
+    }
+
+    /* TOPBAR */
+    .topbar {
+        width: 100%;
+        padding: 16px 40px;
+        background: #112b45;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .menu-item {
+        color: #ffffff;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.25s;
+    }
+
+    .menu-item:hover,
+    .menu-item.active {
+        color: #0dd38d;
+    }
+
+    .notif-box {
+        position: relative;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+
+    .notif-box:hover {
+        transform: translateY(-3px);
+    }
+
+    .notif-count {
+        position: absolute;
+        top: -6px;
+        right: -10px;
+        background: #ff4444;
+        color: white;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 50%;
+        font-weight: 700;
+    }
+
+    .logo {
+        margin: 0;
+        color: #0dd38d;
+        font-size: 26px;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(13, 211, 141, 0.4);
+        transition: 0.25s;
+    }
+
+    .logo:hover {
+        transform: translateY(-3px);
+        text-shadow: 0 0 12px rgba(13,211,141,0.6);
+    }
+
+    .profile-img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #ffffff;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.08);
+    }
+
+    /* CONTENT */
+    .content {
+        padding: 120px 24px 40px;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 26px;
+        font-weight: 700;
+        color: #0dd38d;
+    }
+
+    .status-card {
+        background: #112b45;
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .status-title {
+        font-size: 18px;
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+
+    .status {
+        font-size: 16px;
+        padding: 8px 14px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+
+    .menunggu {
+        background: rgba(251,191,36,0.2);
+        color: #FBBF24;
+        border: 1px solid #FBBF24;
+    }
+    .diterima {
+        background: rgba(74,222,128,0.2);
+        color: #4ADE80;
+        border: 1px solid #4ADE80;
+    }
+    .ditolak {
+        background: rgba(248,113,113,0.2);
+        color: #F87171;
+        border: 1px solid #F87171;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 12px;
+        margin-top: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .btn-dp {
+        background: #0dd38d;
+        color: #0b2239;
+    }
+
+    .request-detail {
+        margin: 10px 0;
+        font-size: 14px;
+        opacity: 0.85;
+    }
+
+    .request-detail span {
+        font-weight: 600;
+        color: #0dd38d;
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="topbar">
+        <div class="logo" onclick="window.location.href='dashboard.html'">Skill Farm</div>
+
+        <nav class="menu">
+            <a href="dashboard.html" class="menu-item">Penawar Jasa</a>
+            <a href="jasa-saya.html" class="menu-item">Jasa Saya</a>
+            <a href="permintaan.html" class="menu-item active">Permintaan Anda</a>
+
+            <div class="notif-box" onclick="window.location.href='notifikasi.html'">
+                🔔
+                <span class="notif-count">3</span>
+            </div>
+        </nav>
+
+        <img src="images/Madara2.jpg" class="profile-img" onclick="window.location.href='profile.html'">
+    </header>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <h2>Status Permintaan Anda</h2>
+
+        <!-- MENUNGGU -->
+        <div class="status-card">
+            <p class="status-title">Status:</p>
+            <div class="status menunggu">Menunggu Persetujuan</div>
+
+            <p class="request-detail">
+                <span>Jasa:</span> Edit Video Cinematic<br>
+                <span>Deskripsi:</span> Edit video TikTok berdurasi 1 menit, menambahkan efek transisi dan musik.<br>
+                <span>Harga:</span> Rp 1.200.000
+            </p>
+
+            <p>Penyedia jasa sedang memeriksa permintaan Anda. Harap tunggu...</p>
+        </div>
+
+        <!-- DITERIMA -->
+        <div class="status-card">
+            <p class="status-title">Status:</p>
+            <div class="status diterima">Diterima</div>
+
+            <p class="request-detail">
+                <span>Jasa:</span> Jasa Coding Website<br>
+                <span>Deskripsi:</span> Membuat website responsive untuk toko online dengan fitur checkout.<br>
+                <span>Harga:</span> Rp 1.500.000
+            </p>
+
+            <p>Permintaan Anda telah diterima. Silakan lanjutkan pembayaran untuk memulai pengerjaan.</p>
+
+            <button class="btn btn-dp" onclick="window.location.href='Pembayaran.html'">Lanjutkan Membayar</button>
+        </div>
+
+        <!-- DITOLAK -->
+        <div class="status-card">
+            <p class="status-title">Status:</p>
+            <div class="status ditolak">Tidak Diterima</div>
+
+            <p class="request-detail">
+                <span>Jasa:</span> Desain Banner / Logo<br>
+                <span>Deskripsi:</span> Membuat desain logo baru untuk brand produk.<br>
+                <span>Harga:</span> Rp 800.000
+            </p>
+
+            <p>Penyedia jasa tidak dapat menerima permintaan Anda.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jasa Saya - Skill Farm</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #0b2239;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* TOPBAR */
+        .topbar {
+            width: 100%;
+            padding: 16px 40px;
+            background: #112b45;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 20;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .logo {
+            margin: 0;
+            color: #0dd38d;
+            font-size: 26px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .menu-item {
+            color: #ffffff;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.25s;
+        }
+
+        .menu-item:hover,
+        .menu-item.active {
+            color: #0dd38d;
+        }
+
+        .notif-box {
+            position: relative;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .notif-count {
+            position: absolute;
+            top: -6px;
+            right: -10px;
+            background: #ff4444;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-weight: 700;
+        }
+
+        .profile-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.08);
+        }
+
+        .content {
+            padding: 120px 50px 50px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Button tambah jasa */
+        .add-btn {
+            background: #0dd38d;
+            color: #0b2239;
+            padding: 12px 18px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: 0.2s;
+        }
+
+        .add-btn:hover {
+            background: #12e9a1;
+            transform: translateY(-3px);
+        }
+
+        /* Jasa cards */
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #112b45;
+            padding: 18px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: 0.2s;
+        }
+
+        .service-card:hover {
+            background: #153455;
+        }
+
+        .service-img {
+            width: 100%;
+            height: 150px;
+            background: #0dd38d22;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .service-card h3 {
+            margin-top: 12px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            margin: 6px 0 10px;
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0dd38d;
+            margin-bottom: 10px;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .edit-btn,
+        .delete-btn {
+            flex: 1;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .edit-btn {
+            background: #0dd38d;
+            color: #0b2239;
+        }
+
+        .edit-btn:hover {
+            background: #13e8a0;
+        }
+
+        .delete-btn {
+            background: #e63e35;
+            color: white;
+        }
+
+        .delete-btn:hover {
+            background: #ff5249;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div class="logo" onclick="window.location.href='index.html'">Skill Farm</div>
+
+        <nav class="menu">
+            <a href="dashboard.html" class="menu-item">Penawar Jasa</a>
+            <a href="jasa-saya.html" class="menu-item active">Jasa Saya</a>
+            <a href="permintaan-saya.html" class="menu-item">Permintaan</a>
+
+            <div class="notif-box" onclick="window.location.href='notifikasi.html'">
+                🔔
+                <span class="notif-count">3</span>
+            </div>
+        </nav>
+
+        <img src="images/Madara2.jpg" class="profile-img" onclick="window.location.href='profile.html'">
+    </header>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <h2 class="section-title">Jasa Yang Saya Tawarkan</h2>
+
+        <button class="add-btn">+ Tambah Jasa Baru</button>
+
+        <div class="service-list">
+
+            <!-- JASA 1 -->
+            <div class="service-card">
+                <img src="Images/website-coding-close-up-photo.webp" class="service-img">
+                <h3>Jasa Coding Website</h3>
+                <p>Membuat website modern, responsive, dan cepat.</p>
+                <div class="btn-row">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Hapus</button>
+                </div>
+            </div>
+
+            <!-- JASA 2 -->
+            <div class="service-card">
+                <img src="Images/editing-7320125_640.webp" class="service-img">
+                <h3>Edit Video Cinematic</h3>
+                <p>Edit cinematic, TikTok, YouTube, reels.</p>
+                <div class="btn-row">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Hapus</button>
+                </div>
+            </div>
+
+            <!-- JASA 3 -->
+            <div class="service-card">
+                <img src="Images/still-life-graphic-design-studio-640x427.webp" class="service-img">
+                <h3>Desain Banner / Logo</h3>
+                <p>Desain modern, clean, dan profesional.</p>
+                <div class="btn-row">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Hapus</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

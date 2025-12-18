@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Skill Farm</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #0b2239;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* TOPBAR */
+        .topbar {
+            width: 100%;
+            padding: 16px 40px;
+            background: #112b45;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 20;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .menu {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+    .menu-item {
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.25s;
+    }
+
+    .menu-item:hover,
+    .menu-item.active {
+    color: #0dd38d;
+    }
+
+    .notif-box {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.25s;
+    }
+
+    .notif-box:hover {
+    transform: translateY(-3px);
+    }
+
+    .notif-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #ff4444;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: 700;
+    }
+
+        .logo {
+            margin: 0;
+            color: #0dd38d;
+            font-size: 26px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(13, 211, 141, 0.4);
+            transition: 0.25s;
+        }
+
+        .logo:hover {
+            transform: translateY(-3px);
+            text-shadow: 0 0 12px rgba(13,211,141,0.6);
+        }
+
+        .profile-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.08);
+        }
+
+        .content {
+            padding: 120px 50px 50px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #112b45;
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            background: #153455;
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #0dd38d;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+    <div class="logo" onclick="window.location.href='index.html'">Skill Farm</div>
+
+    <nav class="menu">
+        <a href="dashboard.html" class="menu-item active">Penawar Jasa</a>
+        <a href="jasa-saya.html" class="menu-item">Jasa Saya</a>
+        <a href="permintaan-saya.html" class="menu-item">Permintaan Anda</a>
+
+        <!-- Notifikasi -->
+        <div class="notif-box" onclick="window.location.href='notifikasi.html'">
+            🔔
+            <span class="notif-count">3</span>
+        </div>
+    </nav>
+
+    <img src="images/Madara2.jpg" class="profile-img" onclick="window.location.href='profile.html'">
+    </header>
+
+    <div class="content">
+
+        <h2 class="section-title">Tawaran Jasa Untuk Anda</h2>
+
+        <div class="service-grid">
+            <div class="service-card" onclick="window.location.href='kategori coding.html'">
+                <div class="service-icon">💻</div>
+                <h3>Coding & Programming</h3>
+                <p>Website, aplikasi, debugging, front-end, back-end.</p>
+            </div>
+
+            <div class="service-card" onclick="window.location.href='kategori-Edit-video.html'">
+                <div class="service-icon">🎬</div>
+                <h3>Edit Video</h3>
+                <p>Cinematic, TikTok, YouTube, iklan.</p>
+            </div>
+
+            <div class="service-card" onclick="window.location.href='kategori-Desain.html'">
+                <div class="service-icon">🎨</div>
+                <h3>Desain Grafis</h3>
+                <p>Poster, banner, logo, ilustrasi.</p>
+            </div>
+
+            <div class="service-card" onclick="window.location.href='kategori-Copywriting.html'">
+                <div class="service-icon">📝</div>
+                <h3>Copywriting</h3>
+                <p>Artikel, skrip video, deskripsi produk.</p>
+            </div>
+
+            <div class="service-card" onclick="window.location.href='kategori-Musik.html'">
+                <div class="service-icon">🎵</div>
+                <h3>Musik & Audio</h3>
+                <p>Mixing, voice over, jingle.</p>
+            </div>
+
+            <div class="service-card" onclick="window.location.href='kategori-Fotografi.html'">
+                <div class="service-icon">📸</div>
+                <h3>Fotografi</h3>
+                <p>Foto produk, portrait, event.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat - Skill Farm</title>
+<style>
+    body {
+        margin: 0;
+        background: #0d2236;
+        font-family: Arial, sans-serif;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+        width: 100%;
+        background: #112b45;
+        padding: 18px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-title {
+        color: #0dd38d;
+        font-size: 26px;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(13, 211, 141, 0.4);
+    }
+
+    .navbar-title:hover {
+        transform: translateY(-2px);
+        text-shadow: 0 0 12px rgba(13,211,141,0.6);
+    }
+
+    /* Chat container */
+    .chat-container {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Chat row */
+    .chat-row {
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
+    }
+
+    .chat-row.user {
+        flex-direction: row-reverse;
+    }
+
+    /* Chat bubbles */
+    .chat-bubble {
+        max-width: 70%;
+        padding: 10px 15px;
+        border-radius: 15px;
+        word-wrap: break-word;
+        font-size: 14px;
+        position: relative;
+    }
+
+    .chat-row.user .chat-bubble {
+        background: #0dd38d;
+        color: #0d2236;
+        border-bottom-right-radius: 0;
+    }
+
+    .chat-row.admin .chat-bubble {
+        background: #153455;
+        color: white;
+        border-bottom-left-radius: 0;
+    }
+
+    /* Foto profil */
+    .chat-row img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid #0dd38d;
+        margin-top: -6px;
+    }
+
+    /* Bubble pertama admin turun sedikit */
+    .chat-row.admin:first-child .chat-bubble {
+        margin-top: 10px;
+    }
+
+    /* Input area */
+    .input-area {
+        display: flex;
+        padding: 10px;
+        background: #112b45;
+        border-top: 1px solid rgba(13,211,141,0.2);
+        align-items: center;
+    }
+
+    .input-area input {
+        flex: 1;
+        padding: 10px 15px;
+        border-radius: 20px;
+        border: none;
+        background: #153455;
+        color: white;
+        font-size: 14px;
+        outline: none;
+    }
+
+    .send-btn {
+        margin-left: 10px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: none;
+        background: #0dd38d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .send-btn:hover {
+        background: #0bf0a2;
+    }
+
+    .send-btn svg {
+        fill: #0d2236;
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Scrollbar */
+    .chat-container::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .chat-container::-webkit-scrollbar-thumb {
+        background: rgba(13,211,141,0.4);
+        border-radius: 3px;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-title" onclick="window.history.back()">Skill Farm</div>
+</div>
+
+<!-- Chat area -->
+<div class="chat-container" id="chatContainer">
+    <!-- Hanya bubble pertama admin -->
+    <div class="chat-row admin">
+        <img src="Images/HD-wallpaper-haechan-nct-thumbnail.webp" alt="Profil Admin">
+        <div class="chat-bubble">Halo! Selamat datang di Skill Farm. Ada yang bisa saya bantu?</div>
+    </div>
+</div>
+
+<!-- Input area -->
+<div class="input-area">
+    <input type="text" id="chatInput" placeholder="Tulis pesan..." />
+    <button class="send-btn" onclick="sendMessage()">
+        <svg viewBox="0 0 24 24">
+            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+        </svg>
+    </button>
+</div>
+
+<script>
+    const chatContainer = document.getElementById('chatContainer');
+    const chatInput = document.getElementById('chatInput');
+
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        // Tambahkan pesan user
+        const userRow = document.createElement('div');
+        userRow.classList.add('chat-row', 'user');
+
+        const userBubble = document.createElement('div');
+        userBubble.classList.add('chat-bubble');
+        userBubble.textContent = message;
+
+        const userImg = document.createElement('img');
+        userImg.src = 'Images/Madara2.jpg'; 
+        userImg.alt = 'Profil User';
+
+        userRow.appendChild(userBubble);
+        userRow.appendChild(userImg);
+
+        chatContainer.appendChild(userRow);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+
+        chatInput.value = '';
+    }
+
+    // Kirim pesan dengan enter
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+            e.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>

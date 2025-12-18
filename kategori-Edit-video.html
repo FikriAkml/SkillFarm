@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Farm - Kategori Edit Video</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #0d2236;
+        color: white;
+    }
+
+    /* NAVBAR FULL */
+    .navbar {
+        width: 100%;
+        background: #112b45;
+        padding: 18px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .navbar-inner {
+        width: 90%;
+        max-width: 1350px;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-title {
+        margin: 0;
+        color: #0dd38d;
+        font-size: 26px;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(13, 211, 141, 0.4);
+        transition: 0.25s;
+    }
+
+    .navbar-title:hover {
+        transform: translateY(-3px);
+        text-shadow: 0 0 12px rgba(13,211,141,0.6);
+    }
+
+    .profile-img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #ffffff;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .profile-img:hover { 
+        transform: scale(1.08); 
+    }
+
+    /* CONTENT CONTAINER */
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 130px auto 40px;
+    }
+
+    .section-title {
+        font-size: 40px;
+        font-weight: 900;
+        margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+        opacity: .85;
+        margin-bottom: 40px;
+    }
+
+    /* GRID CARD MENYAMPING */
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card {
+        position: relative; /* untuk rating */
+        flex: 1 1 calc(33.33% - 20px);
+        min-width: 260px;
+
+        background: #112b45;
+        padding: 20px;
+        border-radius: 14px;
+        border: 1px solid rgba(13,211,141,0.25);
+        transition: .25s;
+        cursor: pointer;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+        border-color: #0dd38d;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .card h3 {
+        margin: 0 0 6px;
+        font-size: 22px;
+        color: #ffffff;
+    }
+
+    .card p {
+        opacity: .85;
+        margin: 0 0 15px;
+    }
+
+    .card button {
+        padding: 8px 15px;
+        background: #0dd38d;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: .2s;
+    }
+
+    .card button:hover {
+        background: #0bf0a2;
+        box-shadow: 0 0 10px #0dd38d;
+    }
+
+    /* ⭐ RATING BINTANG */
+    .rating {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 18px;
+        color: #ffd700; 
+        letter-spacing: 1px;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="navbar-inner">
+
+        <div class="navbar-title" onclick="window.location.href='dashboard.html'">
+            Skill Farm
+        </div>
+
+        <img src="images/Madara2.jpg" class="profile-img" onclick="window.location.href='profile.html'">
+
+    </div>
+</nav>
+
+
+<!-- CONTENT -->
+<div class="container">
+
+    <h2 class="section-title">🎬 Kategori Edit Video</h2>
+    <p class="section-subtitle">
+        Temukan editor video profesional untuk kebutuhan konten, cinematic, YouTube, TikTok, hingga editing profesional lainnya.
+    </p>
+
+    <!-- GRID CARD MENYAMPING -->
+    <div class="grid">
+
+        <div class="card" onclick="window.location.href='profile-penyedia-editvideo1.html'">
+            <div class="rating">★★★★★</div>
+            <h3>Erick De Carlo</h3>
+            <p>Editor Video Cinematic • 5 Tahun</p>
+        </div>
+
+        <div class="card" onclick="window.location.href='profile-penyedia-editvideo2.html'">
+            <div class="rating">★★★★☆</div>
+            <h3>Chelsea Nggeolima</h3>
+            <p>Editor Konten YouTube • 3 Tahun</p>
+        </div>
+
+        <div class="card" onclick="window.location.href='editor3.html'">
+            <div class="rating">★★★★★</div>
+            <h3>Kelvin Lay Ratu</h3>
+            <p>Motion Graphic Artist • 4 Tahun</p>
+        </div>
+
+        <div class="card" onclick="window.location.href='editor4.html'">
+            <div class="rating">★★★★☆</div>
+            <h3>Kevin Dengak</h3>
+            <p>Editor TikTok & Reels • 2 Tahun</p>
+        </div>
+
+        <div class="card" onclick="window.location.href='editor5.html'">
+            <div class="rating">★★★★★</div>
+            <h3>Flora Killa</h3>
+            <p>Wedding Video Editor • 6 Tahun</p>
+        </div>
+
+        <div class="card" onclick="window.location.href='editor6.html'">
+            <div class="rating">★★★★☆</div>
+            <h3>Bungsyukur Noto</h3>
+            <p>Video Ads Specialist • 3 Tahun</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

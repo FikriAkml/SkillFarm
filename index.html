@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Farm - Beranda</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #0b2239;
+            color: white;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            background: #1b456eb3;
+            backdrop-filter: blur(8px);
+            z-index: 10;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            background: #ffffff;
+            color: #0b2239;
+            font-weight: 700;
+            padding: 8px 12px;
+            border-radius: 10px;
+        }
+
+        /* NAV LINKS */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .wa-btn {
+            padding: 8px 18px;
+            border: 1px solid #0dd38d;
+            border-radius: 10px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 140px 70px 60px;
+        }
+
+        .hero-left {
+            width: 50%;
+        }
+
+        .hero-left h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero-left p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* BUTTONS */
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            padding: 14px 24px;
+            background: #0dd38d;
+            color: #0b2239;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-secondary {
+            padding: 14px 24px;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* RATING */
+        .stars {
+            font-size: 20px;
+            color: gold;
+        }
+
+        .rating p {
+            margin-top: 5px;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        /* HERO IMAGE */
+        .hero-right img {
+            width: 510px;
+            border-radius: 20px;
+             border: 8px solid #0f384f;
+
+    /* DEPTH */
+    box-shadow: 0px 18px 25px rgba(0, 0, 0, 0.35);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon">SF</div>
+            <span>Skill Farm</span>
+        </div>
+
+        <nav>
+            <a href="#">Beranda</a>
+            <a href="#">Layanan</a>
+            <a href="#">Portofolio</a>
+            <a href="#">Blog</a>
+            <a href="#">Kontak</a>
+            <a href="#" class="wa-btn">WhatsApp</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Jasa Penyedia & Pertukaran Skill Profesional di Indonesia</h1>
+            <p>
+                Skill Farm membantu individu, freelancer, dan pelaku usaha
+                untuk menemukan serta menyediakan berbagai jenis skill secara cepat,
+                modern, dan mudah dikelola.
+            </p>
+
+            <div class="btn-group">
+                <a href="dashboard.html" class="btn-primary">Mulai Cari Skill</a>
+                <a href="dashboard.html" class="btn-secondary">Daftarkan Skill Anda</a>
+            </div>
+
+            <div class="rating">
+                <span class="stars">⭐⭐⭐⭐⭐ 4.9</span>
+                <p>Based on 108 reviews • powered by Google</p>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <!-- Kamu bisa ganti gambar ini nanti -->
+            <img src="Images/image.png" alt="Preview Website" />
+        </div>
+    </section>
+
+</body>
+</html>

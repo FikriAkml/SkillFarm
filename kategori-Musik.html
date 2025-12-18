@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Farm - Copywriting</title>
+
+<style>
+    body{margin:0;padding:0;font-family:Arial;background:#0d2236;color:white}
+    .navbar{width:100%;background:#112b45;padding:18px 0;position:fixed;top:0;left:0;z-index:50;border-bottom:1px solid rgba(255,255,255,0.15)}
+    .navbar-inner{width:90%;max-width:1350px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+    .navbar-title{margin:0;color:#0dd38d;font-size:26px;font-weight:700;cursor:pointer;text-shadow:0 0 10px rgba(13,211,141,.4);transition:.25s}
+    .navbar-title:hover{transform:translateY(-3px);text-shadow:0 0 12px rgba(13,211,141,.6)}
+    .profile-img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #fff;cursor:pointer;transition:.2s}
+    .profile-img:hover{transform:scale(1.08)}
+
+    .container{width:90%;max-width:1200px;margin:130px auto 40px}
+    .section-title{font-size:40px;font-weight:900;margin-bottom:20px}
+    .section-subtitle{opacity:.85;margin-bottom:40px}
+
+    .grid{display:flex;flex-wrap:wrap;gap:20px}
+    .card{position:relative;flex:1 1 calc(33.33% - 20px);min-width:260px;background:#112b45;padding:20px;border-radius:14px;border:1px solid rgba(13,211,141,.25);transition:.25s;cursor:pointer}
+    .card:hover{transform:translateY(-4px);border-color:#0dd38d;box-shadow:0 0 12px rgba(0,0,0,.25)}
+    .card h3{margin:0 0 6px;font-size:22px}
+    .card p{margin:0 0 15px;opacity:.85}
+    .rating{position:absolute;top:15px;right:15px;font-size:18px;color:#ffd700}
+    button{padding:8px 15px;background:#0dd38d;border:none;border-radius:8px;cursor:pointer;font-weight:bold}
+    button:hover{background:#0bf0a2;box-shadow:0 0 10px #0dd38d}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="navbar-inner">
+        <div class="navbar-title" onclick="window.location.href='dashboard.html'">Skill Farm</div>
+        <img src="images/Madara2.jpg" class="profile-img" onclick="window.location.href='profile.html'">
+    </div>
+</nav>
+
+<div class="container">
+    <h2 class="section-title">🎵 Kategori Musik & Video</h2>
+    <p class="section-subtitle">Musisi, komposer, dan audio engineer profesional untuk kebutuhan musik kamu.</p>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="rating">★★★★★</div>
+            <h3>Patrix Gebo</h3>
+            <p>Copywriter Iklan • 4 Tahun</p>
+            <button>Hubungi</button>
+        </div>
+
+        <div class="card">
+            <div class="rating">★★★★☆</div>
+            <h3>Ferra Manu</h3>
+            <p>Caption Sosial Media • 3 Tahun</p>
+            <button>Hubungi</button>
+        </div>
+
+        <div class="card">
+            <div class="rating">★★★★★</div>
+            <h3>Daniel Talaen</h3>
+            <p>Script Video • 5 Tahun</p>
+            <button>Hubungi</button>
+        </div>
+
+        <div class="card">
+            <div class="rating">★★★★☆</div>
+            <h3>Hendrik Tonak</h3>
+            <p>Storytelling Specialist • 2 Tahun</p>
+            <button>Hubungi</button>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

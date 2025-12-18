@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil Penyedia Jasa - Skill Farm</title>
+<style>
+    body {
+        margin: 0;
+        background: #0d2236;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+
+    /* NAVBAR / LOGO */
+    .navbar {
+        width: 100%;
+        background: #112b45;
+        padding: 18px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-title {
+        margin: 0;
+        color: #0dd38d;
+        font-size: 26px;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(13, 211, 141, 0.4);
+        transition: 0.25s;
+    }
+
+    .navbar-title:hover {
+        transform: translateY(-3px);
+        text-shadow: 0 0 12px rgba(13,211,141,0.6);
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1000px;
+        margin: 120px auto 40px;
+        background: #112b45;
+        padding: 30px 40px;
+        border-radius: 16px;
+        border: 1px solid rgba(13,211,141,0.25);
+    }
+
+    .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .profile-header img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .profile-header div h2 {
+        margin: 0;
+        font-size: 28px;
+        color: #0dd38d;
+    }
+
+    .profile-header div p {
+        margin: 5px 0 0;
+        opacity: 0.85;
+        font-size: 16px;
+    }
+
+    .section {
+        margin-top: 25px;
+    }
+
+    .section h3 {
+        margin-bottom: 12px;
+        color: #0dd38d;
+        font-size: 20px;
+        border-bottom: 1px solid rgba(13,211,141,0.3);
+        padding-bottom: 5px;
+    }
+
+    .history-list, .skill-list {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .history-list li, .skill-list li {
+        margin-bottom: 8px;
+        padding: 10px 12px;
+        background: #153455;
+        border-radius: 10px;
+    }
+
+    .chat-btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 22px;
+        background: #0dd38d;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+        transition: background 0.3s;
+    }
+
+    .chat-btn:hover {
+        background: #0bf0a2;
+    }
+</style>
+</head>
+<body>
+
+<!-- LOGO / NAVBAR -->
+<div class="navbar">
+    <div class="navbar-title" onclick="window.history.back()">Skill Farm</div>
+</div>
+
+<div class="container">
+    <div class="profile-header">
+        <img src="Images/WhatsApp Image 2024-09-15 at 19.43.01_985e595b - Fikri Akmal.jpg" alt="Foto Profil">
+        <div>
+            <h2>Fikri Akmal</h2>
+            <p>Fullstack developer dengan pengalaman 4 tahun di website dan aplikasi.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Skill & Kemampuan</h3>
+        <ul class="skill-list">
+            <li>Frontend Developer</li>
+            <li>Backend Developer</li>
+            <li>React JS</li>
+            <li>Node.js</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>History / Portfolio</h3>
+        <ul class="history-list">
+            <li>Website E-commerce - 2024</li>
+            <li>Aplikasi Mobile - 2023</li>
+            <li>Project Freelance - 2022</li>
+        </ul>
+    </div>
+
+    <button class="chat-btn" onclick="window.location.href='hubungi-coding1.html'">Hubungi</button>
+    <button class="chat-btn" style="background:#0b8cd3;" onclick="window.location.href='pesan-jasa.html'">Pesan Jasa</button>
+</div>
+
+</body>
+</html>

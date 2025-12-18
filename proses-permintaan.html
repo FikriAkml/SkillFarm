@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Permintaan Diproses - Skill Farm</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #0d2236;
+        font-family: Arial, sans-serif;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .box {
+        background: #112b45;
+        width: 90%;
+        max-width: 450px;
+        padding: 40px 32px;
+        border-radius: 18px;
+        border: 1px solid rgba(13,211,141,0.25);
+        text-align: center;
+        box-shadow: 0 0 20px rgba(13,211,141,0.12);
+    }
+
+    h2 {
+        color: #0dd38d;
+        font-size: 24px;
+        margin-bottom: 12px;
+        text-shadow: 0 0 8px rgba(13,211,141,0.4);
+    }
+
+    p {
+        font-size: 16px;
+        opacity: 0.85;
+        margin-bottom: 25px;
+    }
+
+    .loader {
+        width: 55px;
+        height: 55px;
+        border: 6px solid rgba(255,255,255,0.18);
+        border-top-color: #0dd38d;
+        border-radius: 50%;
+        margin: 0 auto 22px;
+        animation: spin 0.9s linear infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .btn-dashboard {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 22px;
+        background: #0dd38d;
+        color: #0d2236;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 12px;
+        transition: 0.25s;
+        box-shadow: 0 0 10px rgba(13,211,141,0.4);
+    }
+
+    .btn-dashboard:hover {
+        background: #0bf0a2;
+        transform: translateY(-3px);
+        box-shadow: 0 0 15px rgba(13,211,141,0.6);
+    }
+
+    .footer {
+        margin-top: 18px;
+        font-size: 13px;
+        opacity: 0.6;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <div class="loader"></div>
+
+    <h2>Permintaan Anda Sedang Diproses</h2>
+    <p>Mohon tunggu sebentar. Permintaan Anda sedang menunggu persetujuan dari penyedia jasa.</p>
+
+    <!-- TOMBOL KEMBALI KE DASHBOARD -->
+    <a href="dashboard.html" class="btn-dashboard">Kembali ke Dashboard</a>
+
+    <div class="footer">Skill Farm © 2025</div>
+</div>
+
+</body>
+</html>

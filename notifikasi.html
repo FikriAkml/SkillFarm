@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notifikasi - Skill Farm</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        background: #0b2239;
+        color: white;
+        min-height: 100vh;
+    }
+
+    /* TOPBAR */
+    .topbar {
+        width: 100%;
+        padding: 16px 40px;
+        background: #112b45;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .logo {
+        margin: 0;
+        color: #0dd38d;
+        font-size: 26px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+    }
+
+    .menu-item {
+        color: #ffffff;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.25s;
+    }
+
+    .menu-item:hover,
+    .menu-item.active {
+        color: #0dd38d;
+    }
+
+    .profile-img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #ffffff;
+        cursor: pointer;
+    }
+
+    .content {
+        padding: 120px 50px 50px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    /* NOTIF LIST */
+    .notif-list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .notif-card {
+        background: #112b45;
+        padding: 18px;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.12);
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        transition: 0.25s;
+        cursor: pointer;
+    }
+
+    .notif-card:hover {
+        background: #153455;
+        transform: translateY(-2px);
+    }
+
+    .notif-img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #0dd38d;
+    }
+
+    .notif-info {
+        flex: 1;
+    }
+
+    .notif-name {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .notif-job {
+        font-size: 14px;
+        opacity: .85;
+        margin-bottom: 6px;
+        line-height: 1.4;
+    }
+
+    .notif-time {
+        font-size: 12px;
+        opacity: .7;
+    }
+
+    .notif-status {
+        padding: 6px 12px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    .notif-status.unread { background: #ff4444; }
+    .notif-status.read { background: #0dd38d; }
+
+    /* DETAIL POPUP */
+    .popup {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.65);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 300;
+    }
+
+    .popup-content {
+        background: #111625;
+        padding: 25px 30px;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 16px;
+        border: 1px solid #1c253e;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        text-align: left;
+        position: relative;
+    }
+
+    .popup h3 {
+        margin-bottom: 15px;
+        color: #0dd38d;
+    }
+
+    .popup p {
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: #ff5656;
+        border: none;
+        color: white;
+        padding: 6px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close-btn:hover {
+        background: #ff8080;
+    }
+
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="logo" onclick="window.location.href='index.html'">Skill Farm</div>
+
+    <nav class="menu">
+        <a href="dashboard.html" class="menu-item">Penawar Jasa</a>
+        <a href="jasa-saya.html" class="menu-item">Jasa Saya</a>
+        <a href="permintaan-saya.html" class="menu-item">Permintaan</a>
+        <a href="notifikasi.html" class="menu-item active">Notifikasi</a>
+    </nav>
+
+    <img src="images/Madara2.jpg" class="profile-img" onclick="window.location.href='profile.html'">
+</header>
+
+<div class="content">
+    <h2 class="section-title">Notifikasi Masuk</h2>
+
+    <div class="notif-list">
+
+        <!-- NOTIF 1 -->
+        <div class="notif-card" onclick="showDetail('notif1')">
+            <img src="images/user1.jpg" class="notif-img">
+            <div class="notif-info">
+                <div class="notif-status unread">Belum Dibaca</div>
+                <div class="notif-name">Rizky Ramadhan</div>
+                <div class="notif-job">
+                    Edit Video Cinematic - Video YouTube 3 menit
+                </div>
+                <div class="notif-time">2 menit yang lalu</div>
+            </div>
+        </div>
+
+        <!-- NOTIF 2 -->
+        <div class="notif-card" onclick="showDetail('notif2')">
+            <img src="images/user2.jpg" class="notif-img">
+            <div class="notif-info">
+                <div class="notif-status read">Sudah Dibaca</div>
+                <div class="notif-name">Alya Salsabila</div>
+                <div class="notif-job">
+                    Website Portfolio - Frontend HTML/CSS
+                </div>
+                <div class="notif-time">1 jam lalu</div>
+            </div>
+        </div>
+
+        <!-- NOTIF 3 -->
+        <div class="notif-card" onclick="showDetail('notif3')">
+            <img src="images/user3.jpg" class="notif-img">
+            <div class="notif-info">
+                <div class="notif-status read">Sudah Dibaca</div>
+                <div class="notif-name">Bagas Saputra</div>
+                <div class="notif-job">
+                    Logo Design - Logo Brand Startup
+                </div>
+                <div class="notif-time">Kemarin</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- POPUP DETAIL JASA -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <button class="close-btn" onclick="closePopup()">X</button>
+        <h3 id="popup-title">Detail Jasa</h3>
+        <p><strong>Nama Pemesan:</strong> <span id="popup-name"></span></p>
+        <p><strong>Jasa:</strong> <span id="popup-job"></span></p>
+        <p><strong>Deskripsi:</strong> <span id="popup-desc"></span></p>
+        <p><strong>Budget:</strong> <span id="popup-budget"></span></p>
+        <p><strong>Deadline:</strong> <span id="popup-deadline"></span></p>
+    </div>
+</div>
+
+<script>
+const notifDetails = {
+    notif1: {
+        name: "Rizky Ramadhan",
+        job: "Edit Video Cinematic",
+        desc: "Membuat video cinematic berdurasi 3 menit untuk YouTube channel.",
+        budget: "Rp500.000",
+        deadline: "10 Desember 2025"
+    },
+    notif2: {
+        name: "Alya Salsabila",
+        job: "Website Portfolio",
+        desc: "Membuat website portfolio frontend HTML/CSS untuk personal branding.",
+        budget: "Rp1.000.000",
+        deadline: "12 Desember 2025"
+    },
+    notif3: {
+        name: "Bagas Saputra",
+        job: "Logo Design",
+        desc: "Mendesain logo untuk startup baru, termasuk branding color dan icon.",
+        budget: "Rp750.000",
+        deadline: "15 Desember 2025"
+    }
+};
+
+function showDetail(id) {
+    const detail = notifDetails[id];
+    document.getElementById('popup-name').textContent = detail.name;
+    document.getElementById('popup-job').textContent = detail.job;
+    document.getElementById('popup-desc').textContent = detail.desc;
+    document.getElementById('popup-budget').textContent = detail.budget;
+    document.getElementById('popup-deadline').textContent = detail.deadline;
+    document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+</script>
+
+</body>
+</html>

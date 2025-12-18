@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesan Jasa - Skill Farm</title>
+<style>
+    body {
+        margin: 0;
+        background: #0d2236;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+
+    /* Navbar */
+    .navbar {
+        width: 100%;
+        background: #112b45;
+        padding: 18px 20px;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .navbar-title {
+        color: #0dd38d;
+        font-size: 26px;
+        font-weight: 700;
+        cursor: pointer;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(13,211,141,0.4);
+    }
+
+    .navbar-title:hover {
+        transform: translateY(-2px);
+        text-shadow: 0 0 12px rgba(13,211,141,0.6);
+    }
+
+    .container {
+        width: 90%;
+        max-width: 600px;
+        margin: 100px auto 40px;
+        background: #112b45;
+        padding: 30px 25px;
+        border-radius: 16px;
+        border: 1px solid rgba(13,211,141,0.25);
+    }
+
+    h2 {
+        color: #0dd38d;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea,
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        background: #153455;
+        color: white;
+        font-size: 14px;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+    }
+
+    .btn {
+        flex: 1;
+        margin: 0 5px;
+        padding: 12px 0;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+        color: white;
+    }
+
+    .btn-send {
+        background: #0dd38d;
+    }
+
+    .btn-send:hover {
+        background: #0bf0a2;
+    }
+
+    .btn-cancel {
+        background: #ff5555;
+    }
+
+    .btn-cancel:hover {
+        background: #ff7777;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="navbar-title" onclick="window.history.back()">Skill Farm</div>
+</div>
+
+<div class="container">
+    <h2>Form Pesan Jasa</h2>
+    <form id="requestForm">
+        <label for="judul">Judul Proyek</label>
+        <input type="text" id="judul" placeholder="Contoh: Desain Logo Baru" required>
+
+        <label for="deskripsi">Deskripsi Pekerjaan</label>
+        <textarea id="deskripsi" placeholder="Jelaskan detail pekerjaan yang diinginkan..." required></textarea>
+
+        <label for="deadline">Deadline</label>
+        <input type="date" id="deadline" required>
+
+        <label for="budget">Budget (opsional)</label>
+        <input type="number" id="budget" placeholder="Rp">
+
+        <label for="file">Upload Referensi / File</label>
+        <input type="file" id="file">
+
+        <div class="btn-container">
+            <button type="button" class="btn btn-cancel" onclick="window.history.back()">Batal</button>
+            <button type="submit" class="btn btn-send" onclick="window.location.href='proses-permintaan.html'">Kirim Permintaan</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Simulasi submit form
+    const form = document.getElementById('requestForm');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // cegah reload halaman
+        alert('Permintaan jasa berhasil dikirim!');
+        form.reset();
+    });
+</script>
+
+</body>
+</html>
